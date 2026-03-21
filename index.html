@@ -14,10 +14,10 @@
     <h2 class="logo">SmartLife</h2>
 
     <ul>
-      <li class="active">Dashboard</li>
-      <li>Tasks</li>
-      <li>Finance</li>
-      <li>Focus</li>
+      <li class="active"  data-page="dashboard">Dashboard</li>
+      <li data-page="tasks">Tasks </li>
+      <li data-page="finance">Finance</li>
+      <li data-page="focus">Focus</li>
     </ul>
 
     <div class="collapse">Collapse Menu</div>
@@ -155,9 +155,15 @@
 
         <label>PRIORITY</label>
         <div class="priority">
-          <button>High</button>
-          <button class="active">Medium</button>
-          <button>Low</button>
+          <button class="high">High</button>
+          <button class="medium" >Medium</button>
+          <button class="low">Low</button>
+        </div>
+
+        <label>DUE DATE</label>
+        <div class="TaskDueDate">
+<input type="date"></input>
+
         </div>
       </div>
 
@@ -186,6 +192,15 @@
 
   </div>
 
+</div>
+
+<div class="Task Manager">
+<div class="TaskManagerSection">
+  <input><label> Add a new Task..</label><button>Add</button>
+<div>
+  <input type="checkbox" id="completetask" name="completetask" value="">
+</div>
+</div>
 </div>
 
 <script src="script.js"></script>

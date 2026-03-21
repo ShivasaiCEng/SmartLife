@@ -400,3 +400,21 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
+
+/* HIGH = RED */
+.priority button.high.active {
+  border: 2px solid #e74c3c;
+  color: #e74c3c;
+}
+
+/* MEDIUM = GREEN */
+.priority button.medium.active {
+  border: 2px solid #2ecc71;
+  color: #2ecc71;
+}
+
+/* LOW = BLUE */
+.priority button.low.active {
+  border: 2px solid #3498db;
+  color: #3498db;
+}
