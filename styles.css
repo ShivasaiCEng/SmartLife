@@ -409,12 +409,12 @@ body {
 
 /* MEDIUM = GREEN */
 .priority button.medium.active {
-  border: 2px solid #2ecc71;
+  border: 2px solid #3498db;
   color: #2ecc71;
 }
 
 /* LOW = BLUE */
 .priority button.low.active {
-  border: 2px solid #3498db;
+  border: 2px solid #2ecc71;
   color: #3498db;
 }
