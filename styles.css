@@ -213,6 +213,10 @@ body {
   border-radius: 12px;
 }
 
+.task{
+  
+}
+
 .tasks-header {
   display: flex;
   justify-content: space-between;

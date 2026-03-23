@@ -47,11 +47,12 @@ saveBtn.addEventListener("click", () => {
 function saveTask() {
   const title = document.querySelector("#task input").value;
   const priority = document.querySelector(".priority button").innerText;
+  const duedate= document.querySelector(".TaskDueDate input").value;
   
   if (!title.trim()) return;
   AppState.tasks.push({
     title,
-    priority
+    priority,duedate
   });
   document.querySelector("#task input").value = "";
 }
@@ -104,10 +105,13 @@ function showTasks() {
       <div class="task">
         <p>${task.title}</p>
         <span>${task.priority}</span>
+          <span>${task.duedate}</span>
+        
       </div>
     `;
   });
 }
+
 // 👉 Show Finance
 function showFinance() {
   const container = document.querySelector(".tasks");
