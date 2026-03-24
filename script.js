@@ -9,6 +9,15 @@ const overlay = document.getElementById("overlay");
 const closeBtn = document.getElementById("closeBtn");
 const saveBtn = document.querySelector(".save-btn");
 const menuItems = document.querySelectorAll(".sidebar li");
+const header=document.querySelector(".header");
+const cards=document.querySelector(".cards");
+const score=document.querySelector(".score");
+const newTaskblock=document.querySelector(".NewTaskblock");
+
+
+
+
+
 
 
 // Open modal
@@ -98,8 +107,16 @@ menuItems.forEach(item => {
 // }
 // 👉 Show Tasks
 function showTasks() {
+    header.style.display = "none";
+  cards.style.display = "none";
+  score.style.display = "none";
+  newTaskblock.style.display="block";
+
+  
   const container = document.querySelector(".tasks");
-  container.innerHTML = "<h3>All Tasks</h3>";
+    container.style.display="block";
+
+  // container.innerHTML += "<h3>All Tasks</h3>";
   AppState.tasks.forEach(task => {
     container.innerHTML += `
       <div class="task">

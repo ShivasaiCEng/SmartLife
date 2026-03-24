@@ -213,12 +213,13 @@ body {
   border-radius: 12px;
 }
 
-.task{
-  
+.addnewtask{
+  width:60rem;
 }
 
 .tasks-header {
   display: flex;
+  flex-direction:row;
   justify-content: space-between;
   margin-bottom: 10px;
 }
