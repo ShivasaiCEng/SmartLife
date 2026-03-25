@@ -13,12 +13,21 @@ const header=document.querySelector(".header");
 const cards=document.querySelector(".cards");
 const score=document.querySelector(".score");
 const newTaskblock=document.querySelector(".NewTaskblock");
+const addNewTask=document.querySelector("#addnewtask");
+const enternewTask=document.querySelector("#enternewtask");
+const tasksContainer = document.querySelector(".tasks");
 
 
 
-
-
-
+addNewTask.addEventListener("click", ()=>{
+  const value=enternewTask.value;
+  tasksContainer.innerHTML+=`
+   <div class="task">
+      <p>${value}</p>
+    </div>
+  `;
+ enternewTask.value = "";
+});
 
 // Open modal
 newEntryBtn.addEventListener("click", () => {
