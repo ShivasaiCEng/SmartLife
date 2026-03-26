@@ -4,6 +4,7 @@ const AppState = {
   finance: [],
   focus: []
 };
+
 const newEntryBtn = document.querySelector(".btn");
 const overlay = document.getElementById("overlay");
 const closeBtn = document.getElementById("closeBtn");
@@ -16,16 +17,21 @@ const newTaskblock=document.querySelector(".NewTaskblock");
 const addNewTask=document.querySelector("#addnewtask");
 const enternewTask=document.querySelector("#enternewtask");
 const tasksContainer = document.querySelector(".tasks");
+const taskList = document.querySelector("#taskList");
 
 
 
 addNewTask.addEventListener("click", ()=>{
   const value=enternewTask.value;
-  tasksContainer.innerHTML+=`
-   <div class="task">
-      <p>${value}</p>
-    </div>
-  `;
+  if (!value.trim()) return;
+
+    const taskDiv = document.createElement("div");
+  taskDiv.classList.add("task");
+  taskDiv.textContent = value;
+
+  taskList.appendChild(taskDiv);
+
+  enternewTask.value = "";
  enternewTask.value = "";
 });
 
