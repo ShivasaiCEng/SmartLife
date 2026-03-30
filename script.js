@@ -22,18 +22,20 @@ const taskList = document.querySelector("#taskList");
 
 
 addNewTask.addEventListener("click", ()=>{
-  const value=enternewTask.value;
-  if (!value.trim()) return;
+ overlay.classList.remove("hidden");
+   document.querySelectorAll(".section").forEach(sec => {
+    sec.classList.remove("active");
+      });
 
-    const taskDiv = document.createElement("div");
-  taskDiv.classList.add("task");
-  taskDiv.textContent = value;
+      document.getElementById("task").classList.add("active");
 
-  taskList.appendChild(taskDiv);
-
-  enternewTask.value = "";
- enternewTask.value = "";
+  // highlight TASK tab
+  document.querySelectorAll(".tab").forEach(tab => {
+    tab.classList.remove("active");
+  });
+   document.querySelector('[data-type="task"]').classList.add("active");
 });
+
 
 // Open modal
 newEntryBtn.addEventListener("click", () => {
@@ -69,16 +71,31 @@ saveBtn.addEventListener("click", () => {
 });
 // ================= SAVE FUNCTIONS =================
 function saveTask() {
-  const title = document.querySelector("#task input").value;
-  const priority = document.querySelector(".priority button").innerText;
-  const duedate= document.querySelector(".TaskDueDate input").value;
-  
+ const title = document.querySelector("#task input").value;
+
+  const activePriority = document.querySelector(".priority .active");
+  const priority = activePriority ? activePriority.innerText : "None";
+
+  const duedate = document.querySelector(".TaskDueDate input").value;
+
   if (!title.trim()) return;
-  AppState.tasks.push({
-    title,
-    priority,duedate
-  });
+
+  const taskDiv = document.createElement("div");
+  taskDiv.classList.add("task");
+
+  taskDiv.innerHTML = `
+    <p>${title}</p>
+    <span>${priority}</span>
+    <span>${duedate}</span>
+  `;
+
+  taskList.appendChild(taskDiv);
+
+  // clear inputs
   document.querySelector("#task input").value = "";
+  document.querySelector(".TaskDueDate input").value = "";
+
+  overlay.classList.add("hidden");
 }
 function saveFinance() {
   const amount = Number(document.querySelector("#finance input[type='number']").value);
