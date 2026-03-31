@@ -71,31 +71,31 @@ saveBtn.addEventListener("click", () => {
 });
 // ================= SAVE FUNCTIONS =================
 function saveTask() {
- const title = document.querySelector("#task input").value;
+const title=document.querySelector("#task input").value;
 
-  const activePriority = document.querySelector(".priority .active");
-  const priority = activePriority ? activePriority.innerText : "None";
+  const activepriority= document.querySelector(".priority .active");
 
-  const duedate = document.querySelector(".TaskDueDate input").value;
+  const priority=activepriority?activepriority.innerText:"None";
 
-  if (!title.trim()) return;
+  const Duedate=document.querySelector(".TaskDueDate input").value;
 
-  const taskDiv = document.createElement("div");
-  taskDiv.classList.add("task");
-
-  taskDiv.innerHTML = `
-    <p>${title}</p>
-    <span>${priority}</span>
-    <span>${duedate}</span>
+  if(!title.trim()) return;
+  const TaskDiv=document.createElement("div");
+TaskDiv.classList.add("task");
+  TaskDiv.innerHTML=`
+  <div class="Taskdetails">
+  <p class="TaskTitle">${title}</p>
+  <span class="TaskPriority">${priority}</span>
+  <span class="TaskDueDate">${Duedate}</span>
+  </div>
   `;
+taskList.appendChild(TaskDiv);
 
-  taskList.appendChild(taskDiv);
+document.querySelector("#task input").value="";
+document.querySelector(".TaskDueDate input").value="";
 
-  // clear inputs
-  document.querySelector("#task input").value = "";
-  document.querySelector(".TaskDueDate input").value = "";
+ overlay.classList.add("hidden");
 
-  overlay.classList.add("hidden");
 }
 function saveFinance() {
   const amount = Number(document.querySelector("#finance input[type='number']").value);
