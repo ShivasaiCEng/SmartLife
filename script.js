@@ -18,11 +18,24 @@ const addNewTask=document.querySelector("#addnewtask");
 const enternewTask=document.querySelector("#enternewtask");
 const tasksContainer = document.querySelector(".tasks");
 const taskList = document.querySelector("#taskList");
+const dailytasks=document.querySelector(".DailyTasks");
 
 
+
+function ShowOnlyTaskMode(){
+  document.querySelector('[data-type="finance"]').style.display="None";
+  document.querySelector('[data-type="focus"]').style.display="None";
+}
+
+function ShowEveryTab(){
+  document.querySelectorAll(".tab").forEach(tab=>{
+    tab.style.display="inline-block";
+  })
+}
 
 addNewTask.addEventListener("click", ()=>{
  overlay.classList.remove("hidden");
+ ShowOnlyTaskMode();
    document.querySelectorAll(".section").forEach(sec => {
     sec.classList.remove("active");
       });
@@ -40,6 +53,7 @@ addNewTask.addEventListener("click", ()=>{
 // Open modal
 newEntryBtn.addEventListener("click", () => {
   overlay.classList.remove("hidden");
+  ShowEveryTab();
 });
 
 // Close modal
@@ -71,6 +85,8 @@ saveBtn.addEventListener("click", () => {
 });
 // ================= SAVE FUNCTIONS =================
 function saveTask() {
+
+  let taskcount=0;
 const title=document.querySelector("#task input").value;
 
   const activepriority= document.querySelector(".priority .active");
@@ -83,13 +99,14 @@ const title=document.querySelector("#task input").value;
   const TaskDiv=document.createElement("div");
 TaskDiv.classList.add("task");
   TaskDiv.innerHTML=`
-  <div class="Taskdetails">
+  <div class="Taskdetails" type=>
   <p class="TaskTitle">${title}</p>
   <span class="TaskPriority">${priority}</span>
   <span class="TaskDueDate">${Duedate}</span>
   </div>
   `;
 taskList.appendChild(TaskDiv);
+taskcount++;
 
 document.querySelector("#task input").value="";
 document.querySelector(".TaskDueDate input").value="";
@@ -137,7 +154,12 @@ menuItems.forEach(item => {
 // function showDashboard() {
 //   location.reload(); // simple reset (for now)
 // }
-// 👉 Show Tasks
+
+// function showDashboard(){
+ 
+  
+//   dailytasks.innerHTML=``
+// }
 function showTasks() {
     header.style.display = "none";
   cards.style.display = "none";
