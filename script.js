@@ -98,9 +98,10 @@ const title=document.querySelector("#task input").value;
   if(!title.trim()) return;
   const TaskDiv=document.createElement("div");
 TaskDiv.classList.add("task");
+
   TaskDiv.innerHTML=`
   <div class="Taskdetails" type=>
-  <p class="TaskTitle">${title}</p>
+<input type="checkbox"><p class="TaskTitle">${title}</p>
   <span class="TaskPriority">${priority}</span>
   <span class="TaskDueDate">${Duedate}</span>
   </div>
