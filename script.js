@@ -101,9 +101,12 @@ TaskDiv.classList.add("task");
 
   TaskDiv.innerHTML=`
   <div class="Taskdetails" type=>
-<input type="checkbox"><p class="TaskTitle">${title}</p>
+    <div class="TaskTitleAndCheckbox">
+<input  class="taskcheckbox" type="checkbox"><p class="TaskTitle">${title}</p> </div>
+<div class="TaskPriorityAndDueDate">
   <span class="TaskPriority">${priority}</span>
   <span class="TaskDueDate">${Duedate}</span>
+  </div>
   </div>
   `;
 taskList.appendChild(TaskDiv);

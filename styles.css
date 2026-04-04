@@ -237,11 +237,12 @@ body {
 }
 
 .task div p {
-  font-size: 14px;
+  font-size: 25px;
+  font-weight:bold;
 }
 
 .task div span {
-  font-size: 11px;
+  font-size: 12px;
   color: gray;
 }
 
@@ -424,18 +425,30 @@ body {
   color: #3498db;
 }
 
-.Taskdetails{
-  height:50px;
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr ;
-  gap:5px;
-  
-
+.TaskTitleAndCheckbox{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  height:auto;
 }
 
-.TaskTitle{
-  font-size:50px;
+.TaskPriorityAndDueDate{
+display:flex;
+padding-left:20px;
+gap:12px;
+}
+
+.taskcheckbox{
+margin-top:11px;
+transform:scale(1.5)
+}
+
+/* .Taskdetails{
+height:auto;
+width:15rem;
+} */
+
+/* .TaskTitle{
+  font-size:100px;
   font-weight:bold;
-  grid
-}
+} */
