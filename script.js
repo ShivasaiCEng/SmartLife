@@ -109,6 +109,7 @@ TaskDiv.classList.add("task");
   </div>
   </div>
   `;
+  
 taskList.appendChild(TaskDiv);
 taskcount++;
 
@@ -117,7 +118,19 @@ document.querySelector(".TaskDueDate input").value="";
 
  overlay.classList.add("hidden");
 
+ taskList.addEventListener("click", (e)=>{
+if(e.target.classList.contains("taskcheckbox")){
+  const Task=e.target.closest(".Taskdetails");
+  const Title= Task.querySelector(".TaskTitle");
+Title.style.textDecoration="line-through";
 }
+
+})
+
+}
+
+
+
 function saveFinance() {
   const amount = Number(document.querySelector("#finance input[type='number']").value);
   const category = document.querySelector("#finance input[type='text']").value;
