@@ -126,7 +126,6 @@ Title.style.textDecoration="line-through";
 }
 
 })
-
 }
 
 
