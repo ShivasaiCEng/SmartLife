@@ -86,8 +86,11 @@ saveBtn.addEventListener("click", () => {
 // ================= SAVE FUNCTIONS =================
 function saveTask() {
 
+   const topInput = document.querySelector("#enternewtask").value;
+  const modalInput = document.querySelector("#task input").value;
+  const title = topInput || modalInput;
+
   let taskcount=0;
-const title=document.querySelector("#task input").value;
 
   const activepriority= document.querySelector(".priority .active");
 
@@ -113,20 +116,27 @@ TaskDiv.classList.add("task");
 taskList.appendChild(TaskDiv);
 taskcount++;
 
+document.querySelector("#enternewtask").value = "";
 document.querySelector("#task input").value="";
 document.querySelector(".TaskDueDate input").value="";
 
- overlay.classList.add("hidden");
+ if (modalInput) {
+    overlay.classList.add("hidden");
+  }
+}
 
  taskList.addEventListener("click", (e)=>{
 if(e.target.classList.contains("taskcheckbox")){
   const Task=e.target.closest(".Taskdetails");
   const Title= Task.querySelector(".TaskTitle");
-Title.style.textDecoration="line-through";
+if(e.target.checked){
+  Title.style.textDecoration = "line-through";
 }
-
-})
+else{
+  Title.style.textDecoration = "none";
 }
+}
+});
 
 
 
