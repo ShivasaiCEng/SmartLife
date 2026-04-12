@@ -85,10 +85,10 @@ saveBtn.addEventListener("click", () => {
 });
 // ================= SAVE FUNCTIONS =================
 function saveTask() {
-
+console.log("Top:", topInput, "Modal:", modalInput);
    const topInput = document.querySelector("#enternewtask").value;
   const modalInput = document.querySelector("#task input").value;
-  const title = topInput || modalInput;
+  const title = topInput || modalInput || "";
 
   let taskcount=0;
 
