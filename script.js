@@ -19,8 +19,13 @@ const enternewTask=document.querySelector("#enternewtask");
 const tasksContainer = document.querySelector(".tasks");
 const taskList = document.querySelector("#taskList");
 const dailytasks=document.querySelector(".DailyTasks");
+  const modalInput = document.querySelector("#task input");
 
 
+
+enternewTask.addEventListener("input", () => {
+  modalInput.value = enternewTask.value;
+});
 
 function ShowOnlyTaskMode(){
   document.querySelector('[data-type="finance"]').style.display="None";
@@ -34,8 +39,11 @@ function ShowEveryTab(){
 }
 
 addNewTask.addEventListener("click", ()=>{
- overlay.classList.remove("hidden");
- ShowOnlyTaskMode();
+  if (enternewTask.value.trim()) {
+    saveTask(); // directly add task
+  } else {
+    overlay.classList.remove("hidden");
+    ShowOnlyTaskMode();
    document.querySelectorAll(".section").forEach(sec => {
     sec.classList.remove("active");
       });
@@ -47,6 +55,8 @@ addNewTask.addEventListener("click", ()=>{
     tab.classList.remove("active");
   });
    document.querySelector('[data-type="task"]').classList.add("active");
+    modalInput.value = enternewTask.value;
+}
 });
 
 
@@ -55,7 +65,7 @@ newEntryBtn.addEventListener("click", () => {
   overlay.classList.remove("hidden");
   ShowEveryTab();
 });
-
+ 
 // Close modal
 closeBtn.addEventListener("click", () => {
   overlay.classList.add("hidden");
@@ -85,7 +95,7 @@ saveBtn.addEventListener("click", () => {
 });
 // ================= SAVE FUNCTIONS =================
 function saveTask() {
-console.log("Top:", topInput, "Modal:", modalInput);
+
    const topInput = document.querySelector("#enternewtask").value;
   const modalInput = document.querySelector("#task input").value;
   const title = topInput || modalInput || "";
