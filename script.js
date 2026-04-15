@@ -22,11 +22,6 @@ const dailytasks=document.querySelector(".DailyTasks");
   const modalInput = document.querySelector("#task input");
 
 
-
-enternewTask.addEventListener("input", () => {
-  modalInput.value = enternewTask.value;
-});
-
 function ShowOnlyTaskMode(){
   document.querySelector('[data-type="finance"]').style.display="None";
   document.querySelector('[data-type="focus"]').style.display="None";
@@ -39,9 +34,7 @@ function ShowEveryTab(){
 }
 
 addNewTask.addEventListener("click", ()=>{
-  if (enternewTask.value.trim()) {
-    saveTask(); // directly add task
-  } else {
+ 
     overlay.classList.remove("hidden");
     ShowOnlyTaskMode();
    document.querySelectorAll(".section").forEach(sec => {
@@ -56,7 +49,7 @@ addNewTask.addEventListener("click", ()=>{
   });
    document.querySelector('[data-type="task"]').classList.add("active");
     modalInput.value = enternewTask.value;
-}
+
 });
 
 
