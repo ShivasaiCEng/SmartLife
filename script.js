@@ -117,6 +117,7 @@ TaskDiv.classList.add("task");
   `;
   
 taskList.appendChild(TaskDiv);
+updateTaskcompletedcard();
 taskcount++;
 
 document.querySelector("#enternewtask").value = "";
@@ -138,9 +139,19 @@ if(e.target.checked){
 else{
   Title.style.textDecoration = "none";
 }
+ updateTaskcompletedcard();
 }
 });
 
+function updateTaskcompletedcard(){
+  const dailytasks=document.querySelector(".DailyTasks");
+  const totalTasks=taskList.children.length;
+  const completedtask=document.querySelectorAll(".taskcheckbox:checked").length;
+
+
+  dailytasks.innerText=`Tasks remaining: ${completedtask} / ${totalTasks}`;
+  dailytasks.style.fontWeight = "bold";
+}
 
 
 function saveFinance() {
