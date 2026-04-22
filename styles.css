@@ -443,6 +443,10 @@ margin-top:11px;
 transform:scale(1.5)
 }
 
+.NewTaskblock{
+  display:flex;
+}
+
 /* .Taskdetails{
 height:auto;
 width:15rem;
