@@ -444,7 +444,27 @@ transform:scale(1.5)
 }
 
 .NewTaskblock{
+  display:flex; 
+}
+
+.togglebtns{
+ margin-left:60%;
+  width:fit-content;
   display:flex;
+  gap:12px;
+  border:2px solid blue;
+  padding:12px;
+}
+
+.taskstoggle{
+  width:fit-content;
+  /* margin-left:55%; */
+   border:2px solid black;
+}
+
+.calendertoggle{
+  width:fit-content;
+   border:2px solid black;
 }
 
 /* .Taskdetails{

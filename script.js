@@ -204,7 +204,7 @@ function showTasks() {
     header.style.display = "none";
   cards.style.display = "none";
   score.style.display = "none";
-  newTaskblock.style.display="block";
+  newTaskblock.classList.remove("hidden");
 
   
   const container = document.querySelector(".tasks");
