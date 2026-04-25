@@ -447,9 +447,26 @@ transform:scale(1.5)
   display:flex; 
 }
 
+.inputbtns{
+  width:250px;
+  display:flex;
+  align-items:center;
+}
+
+.inputbtns input{
+  height:20px;
+  flex-shrink:0;
+}
+
+.inputbtns button{
+  height:20px;
+  
+  flex-shrink:0;
+}
+
 .togglebtns{
- margin-left:60%;
-  width:fit-content;
+ margin-left:auto;
+  
   display:flex;
   gap:12px;
   border:2px solid blue;
