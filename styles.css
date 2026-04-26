@@ -451,11 +451,14 @@ transform:scale(1.5)
   width:250px;
   display:flex;
   align-items:center;
+  
+
 }
 
 .inputbtns input{
   height:20px;
   flex-shrink:0;
+ 
 }
 
 .inputbtns button{
@@ -469,19 +472,33 @@ transform:scale(1.5)
   
   display:flex;
   gap:12px;
-  border:2px solid blue;
-  padding:12px;
+  border:2px solid;
+  border-radius:12px;
+  padding:10px;
+  color:#5557ad;
+  background-color:#f1f4f9;
+  font-weight:50px;
 }
 
 .taskstoggle{
   width:fit-content;
   /* margin-left:55%; */
-   border:2px solid black;
+  
+   border-radius:5px;
+   background-color:white;
+   padding:8px;
 }
 
 .calendertoggle{
   width:fit-content;
-   border:2px solid black;
+   background-color:white;
+   border-radius:5px;
+   padding:8px;
+}
+
+.showbtn{
+  background-color:#5046e5;
+  color:white;
 }
 
 /* .Taskdetails{

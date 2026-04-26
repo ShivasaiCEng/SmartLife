@@ -21,6 +21,9 @@ const taskList = document.querySelector("#taskList");
 const dailytasks=document.querySelector(".DailyTasks");
   const modalInput = document.querySelector("#task input");
 
+  const tasktogglebtn=document.querySelector(".taskstoggle");
+  const calendertogglebtn=document.querySelector(".calendertoggle");
+
 
 function ShowOnlyTaskMode(){
   document.querySelector('[data-type="finance"]').style.display="None";
@@ -263,4 +266,18 @@ priorityButtons.forEach(btn => {
   });
 });
 
+
+//toggle btn logic
+tasktogglebtn.addEventListener("click", ()=>{
+  tasktogglebtn.classList.add("showbtn");
+  calendertogglebtn.classList.remove("showbtn");
+});
+
+calendertogglebtn.addEventListener("click", ()=>{
+  calendertogglebtn.classList.add("showbtn");
+  tasktogglebtn.classList.remove("showbtn");
+})
+
+
+//calender logic
 
