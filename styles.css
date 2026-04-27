@@ -501,6 +501,19 @@ transform:scale(1.5)
   color:white;
 }
 
+//calender section styling
+.calendersection{
+  width:100%;
+  border:3px solid black;
+  height:100%;
+  background-color:red;
+}
+
+.calenderblock{
+  width:100%;
+  color:red;
+}
+
 /* .Taskdetails{
 height:auto;
 width:15rem;

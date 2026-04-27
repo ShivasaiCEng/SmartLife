@@ -23,7 +23,7 @@ const dailytasks=document.querySelector(".DailyTasks");
 
   const tasktogglebtn=document.querySelector(".taskstoggle");
   const calendertogglebtn=document.querySelector(".calendertoggle");
-
+const calendersection=document.querySelector(".calendersection");
 
 function ShowOnlyTaskMode(){
   document.querySelector('[data-type="finance"]').style.display="None";
@@ -276,8 +276,10 @@ tasktogglebtn.addEventListener("click", ()=>{
 calendertogglebtn.addEventListener("click", ()=>{
   calendertogglebtn.classList.add("showbtn");
   tasktogglebtn.classList.remove("showbtn");
+  tasksContainer.style.display="none";
+calendersection.style.display="block";
 })
 
 
 //calender logic
-
+//
