@@ -213,13 +213,13 @@ body {
   border-radius: 12px;
 }
 
-.addnewtask{
-  width:60rem;
+.addnewtask {
+  width: 60rem;
 }
 
 .tasks-header {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   justify-content: space-between;
   margin-bottom: 10px;
 }
@@ -238,7 +238,7 @@ body {
 
 .task div p {
   font-size: 25px;
-  font-weight:bold;
+  font-weight: bold;
 }
 
 .task div span {
@@ -289,7 +289,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -425,93 +425,90 @@ body {
   color: #3498db;
 }
 
-.TaskTitleAndCheckbox{
-  display:flex;
-  align-items:center;
-  gap:6px;
-  height:auto;
+.TaskTitleAndCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: auto;
 }
 
-.TaskPriorityAndDueDate{
-display:flex;
-padding-left:20px;
-gap:12px;
+.TaskPriorityAndDueDate {
+  display: flex;
+  padding-left: 20px;
+  gap: 12px;
 }
 
-.taskcheckbox{
-margin-top:11px;
-transform:scale(1.5)
+.taskcheckbox {
+  margin-top: 11px;
+  transform: scale(1.5);
 }
 
-.NewTaskblock{
-  display:flex; 
+.NewTaskblock {
+  display: flex;
 }
 
-.inputbtns{
-  width:250px;
-  display:flex;
-  align-items:center;
-  
-
+.inputbtns {
+  width: 250px;
+  display: flex;
+  align-items: center;
 }
 
-.inputbtns input{
-  height:20px;
-  flex-shrink:0;
- 
+.inputbtns input {
+  height: 20px;
+  flex-shrink: 0;
 }
 
-.inputbtns button{
-  height:20px;
-  
-  flex-shrink:0;
+.inputbtns button {
+  height: 20px;
+
+  flex-shrink: 0;
 }
 
-.togglebtns{
- margin-left:auto;
-  
-  display:flex;
-  gap:12px;
-  border:2px solid;
-  border-radius:12px;
-  padding:10px;
-  color:#5557ad;
-  background-color:#f1f4f9;
-  font-weight:50px;
+.togglebtns {
+  margin-left: auto;
+
+  display: flex;
+  gap: 12px;
+  border: 2px solid;
+  border-radius: 12px;
+  padding: 10px;
+  color: #5557ad;
+  background-color: #f1f4f9;
+  font-weight: 50px;
 }
 
-.taskstoggle{
-  width:fit-content;
+.taskstoggle {
+  width: fit-content;
   /* margin-left:55%; */
-  
-   border-radius:5px;
-   background-color:white;
-   padding:8px;
+
+  border-radius: 5px;
+  background-color: white;
+  padding: 8px;
 }
 
-.calendertoggle{
-  width:fit-content;
-   background-color:white;
-   border-radius:5px;
-   padding:8px;
+.calendertoggle {
+  width: fit-content;
+  background-color: white;
+  border-radius: 5px;
+  padding: 8px;
 }
 
-.showbtn{
-  background-color:#5046e5;
-  color:white;
+.showbtn {
+  background-color: #5046e5;
+  color: white;
 }
 
 //calender section styling
-.calendersection{
-  width:100%;
-  border:3px solid black;
-  height:100%;
-  background-color:red;
+.calendersection {
+  width: 100%;
+  border: 3px solid black;
+  height: 100%;
+  background-color: red;
 }
 
-.calenderblock{
-  width:100%;
-  color:red;
+.calenderblock {
+  width: 100%;
+  color: red;
 }
 
 /* .Taskdetails{
@@ -523,3 +520,5 @@ width:15rem;
   font-size:100px;
   font-weight:bold;
 } */
+
+
