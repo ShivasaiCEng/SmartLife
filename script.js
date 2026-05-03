@@ -268,18 +268,43 @@ priorityButtons.forEach(btn => {
 
 
 //toggle btn logic
+const taskHeader=document.querySelector(".tasks-header");
+calendersection.style.display="none";
+const togglebtns=document.querySelector(".togglebtns");
+
 tasktogglebtn.addEventListener("click", ()=>{
   tasktogglebtn.classList.add("showbtn");
   calendertogglebtn.classList.remove("showbtn");
+  calendersection.style.display="none";
+newTaskblock.style.display="block";
+
+
 });
 
 calendertogglebtn.addEventListener("click", ()=>{
   calendertogglebtn.classList.add("showbtn");
   tasktogglebtn.classList.remove("showbtn");
-  tasksContainer.style.display="none";
 calendersection.style.display="block";
+// document.querySelector(".inputbtns").style.display = "none";
+newTaskblock.style.display="none";
+taskHeader.style.display="none";
 })
 
 
 //calender logic
-//
+const calenderblock=document.querySelector(".calenderblock");
+const FirstDay= new Date(2026,0,1).getDay();
+const totalDays=new Date(2026,1,0).getDate();
+
+//emptyboxes
+for(let i=0;i<FirstDay;i++){
+  const empty=document.createElement("div");
+  calenderblock.appendChild(empty);
+}
+
+// actual days
+for (let i = 1; i <= totalDays; i++) {
+  const day = document.createElement("div");
+  day.textContent = i;
+  calenderblock.appendChild(day);
+}

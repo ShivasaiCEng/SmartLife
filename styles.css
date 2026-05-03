@@ -209,8 +209,9 @@ body {
 .tasks {
   flex: 2;
   background: white;
-  padding: 20px;
+  padding: 10px 20px;
   border-radius: 12px;
+  position:relative;
 }
 
 .addnewtask {
@@ -464,17 +465,21 @@ body {
   flex-shrink: 0;
 }
 
-.togglebtns {
-  margin-left: auto;
-
-  display: flex;
-  gap: 12px;
+.togglebtns { 
+  position:absolute;
+  
+  display:flex;
+  left:23rem;
+ justify-content:flex-end;
+  width:10rem;
+  gap:12px;
   border: 2px solid;
   border-radius: 12px;
   padding: 10px;
   color: #5557ad;
   background-color: #f1f4f9;
   font-weight: 50px;
+  
 }
 
 .taskstoggle {
@@ -491,6 +496,7 @@ body {
   background-color: white;
   border-radius: 5px;
   padding: 8px;
+flex:1;
 }
 
 .showbtn {
@@ -500,17 +506,39 @@ body {
 
 //calender section styling
 .calendersection {
+  margin-top:-10px;
   width: 100%;
   border: 3px solid black;
   height: 100%;
   background-color: red;
+  
 }
+.calendersection h1{
+margin-top:0px;
+margin-bottom:10px;
+
+}
+
 
 .calenderblock {
-  width: 100%;
+
   color: red;
+  display:grid;
+grid-template-columns:repeat(7,1fr);
+border:2px solid black;
+border-radius:5px;
+gap:10px;
+padding:10px;
+text-align:center;
+margin-top:30px;
 }
 
+.calenderblock div{
+  border:2px solid black;
+  /* width:5rem; */
+  height:5rem;
+  border-radius:5px;
+}
 /* .Taskdetails{
 height:auto;
 width:15rem;
