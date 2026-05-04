@@ -211,7 +211,7 @@ body {
   background: white;
   padding: 10px 20px;
   border-radius: 12px;
-  position:relative;
+  /* position:relative; */
 }
 
 .addnewtask {
@@ -221,8 +221,10 @@ body {
 .tasks-header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+   align-items: center;
+  gap:45px;
   margin-bottom: 10px;
+  width:100%;
 }
 
 .tasks-header span {
@@ -446,12 +448,14 @@ body {
 
 .NewTaskblock {
   display: flex;
+  width:fit-content;
 }
 
 .inputbtns {
   width: 250px;
   display: flex;
-  align-items: center;
+  align-items: center; 
+  
 }
 
 .inputbtns input {
@@ -466,11 +470,10 @@ body {
 }
 
 .togglebtns { 
-  position:absolute;
+  
   
   display:flex;
-  left:23rem;
- justify-content:flex-end;
+ justify-content:flex-start;
   width:10rem;
   gap:12px;
   border: 2px solid;
