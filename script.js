@@ -206,7 +206,7 @@ menuItems.forEach(item => {
 function showTasks() {
     header.style.display = "none";
   cards.style.display = "none";
-  score.style.display = "none";
+  score.style.display = "block";
   newTaskblock.classList.remove("hidden");
 
   
