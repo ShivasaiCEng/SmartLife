@@ -105,7 +105,7 @@ function saveTask() {
   const Duedate=document.querySelector(".TaskDueDate input").value;
 
   if(!title.trim()) return;
-  const TaskDiv=document.createElement("div");
+  const TaskDiv=document.createElement("div"); //TaskDiv will have all the tasks that are added as tasks.
 TaskDiv.classList.add("task");
 
   TaskDiv.innerHTML=`
@@ -198,16 +198,17 @@ menuItems.forEach(item => {
 //   location.reload(); // simple reset (for now)
 // }
 
+
 // function showDashboard(){
- 
-  
-//   dailytasks.innerHTML=``
+//  togglebtns.style.display="none";
 // }
 function showTasks() {
     header.style.display = "none";
   cards.style.display = "none";
-  score.style.display = "block";
+  score.style.display = "none";
+  togglebtns.style.display = "flex";
   newTaskblock.classList.remove("hidden");
+
 
   
   const container = document.querySelector(".tasks");
@@ -271,11 +272,13 @@ priorityButtons.forEach(btn => {
 const taskHeader=document.querySelector(".tasks-header");
 calendersection.style.display="none";
 const togglebtns=document.querySelector(".togglebtns");
+ togglebtns.style.display="none";
 
 tasktogglebtn.addEventListener("click", ()=>{
   tasktogglebtn.classList.add("showbtn");
-  calendertogglebtn.classList.remove("showbtn");
+  calendertogglebtn.classList.remove("showbtn");  //showbtn it is used to modify the color of the button to purple when we click
   calendersection.style.display="none";
+   taskList.style.display = "block";
 newTaskblock.style.display="block";
 
 
@@ -286,8 +289,11 @@ calendertogglebtn.addEventListener("click", ()=>{
   tasktogglebtn.classList.remove("showbtn");
 calendersection.style.display="block";
 // document.querySelector(".inputbtns").style.display = "none";
+taskList.style.display = "none"; //ta
 newTaskblock.style.display="none";
-taskHeader.style.display="none";
+// taskHeader.style.display="none";
+togglebtns.style.display="flex";
+newTaskblock.style.display = "none";
 })
 
 
