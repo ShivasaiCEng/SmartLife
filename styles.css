@@ -538,6 +538,53 @@ margin-bottom:10px;
 
 }
 
+.calender-header{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:12px;
+}
+
+
+#prevMonth,#NextMonth{
+  border-radius:12px;
+background-color:#5046e5;
+padding:12px;
+font-size:20px;
+font-weight:900;
+height:15px
+margin-top:5px;
+
+}
+
+.weekdays{
+  /* display:flex;
+  margin-top:15px;
+ 
+  justify-content:space-between;
+
+
+  padding:15px;
+  margin-left:55px;
+    margin-right:45px;
+  margin-bottom:0px; */
+    display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:10px;
+padding:10px;
+text-align:center;
+
+  
+}
+
+.weekdays div{
+  border:2px solid black;
+  border-radius:5px;
+  padding:5px;
+
+}
+
+
 
 .calenderblock {
 
@@ -549,7 +596,7 @@ border-radius:5px;
 gap:10px;
 padding:10px;
 text-align:center;
-margin-top:30px;
+margin-top:5px;
 }
 
 .calenderblock div{
