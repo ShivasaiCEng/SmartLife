@@ -281,7 +281,6 @@ tasktogglebtn.addEventListener("click", ()=>{
    taskList.style.display = "block";
 newTaskblock.style.display="block";
 
-
 });
 
 calendertogglebtn.addEventListener("click", ()=>{
@@ -294,13 +293,21 @@ newTaskblock.style.display="none";
 // taskHeader.style.display="none";
 togglebtns.style.display="flex";
 newTaskblock.style.display = "none";
+
 })
 
 
 //calender logic
 const calenderblock=document.querySelector(".calenderblock");
-const FirstDay= new Date(2026,0,1).getDay();
-const totalDays=new Date(2026,1,0).getDate();
+const currentday=new Date();
+const Today=new Date();
+
+function rendercalender(date){
+  // container.style.display="none";
+const month=date.getMonth();
+const year = date.getFullYear();
+const FirstDay= new Date(year,month,1).getDay();
+const totalDays=new Date(year,month+1,0).getDate();
 
 //emptyboxes
 for(let i=0;i<FirstDay;i++){
@@ -314,3 +321,7 @@ for (let i = 1; i <= totalDays; i++) {
   day.textContent = i;
   calenderblock.appendChild(day);
 }
+
+}
+
+rendercalender(currentday);
