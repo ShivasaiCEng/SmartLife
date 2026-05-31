@@ -299,15 +299,17 @@ newTaskblock.style.display = "none";
 
 //calender logic
 const calenderblock=document.querySelector(".calenderblock");
+const monthyear=document.querySelector("#monthYear");
 const currentday=new Date();
 const Today=new Date();
-
 function rendercalender(date){
   // container.style.display="none";
-const month=date.getMonth();
+const month=date.getMonth(); // number
 const year = date.getFullYear();
 const FirstDay= new Date(year,month,1).getDay();
-const totalDays=new Date(year,month+1,0).getDate();
+const LastDay=new Date(year,month+1,0).getDate();
+let months=["jan","feb","march","apr","may","june","july","aug","sep","oct","nov","dec"]; 
+calenderblock.textContent="";
 
 //emptyboxes
 for(let i=0;i<FirstDay;i++){
@@ -316,12 +318,29 @@ for(let i=0;i<FirstDay;i++){
 }
 
 // actual days
-for (let i = 1; i <= totalDays; i++) {
+for (let i = 1; i <= LastDay; i++) {
   const day = document.createElement("div");
+  if(i===Today.getDate() && month=== Today.getMonth() && year=== Today.getFullYear()){
+  day.style.backgroundColor="greenyellow";}
   day.textContent = i;
   calenderblock.appendChild(day);
 }
+const HeadingMonth=months[month];  // string
+monthyear.textContent=`${HeadingMonth} ${year}`;
 
 }
 
+
+const prevBtn=document.getElementById("prevMonth");
+const nextBtn=document.getElementById("NextMonth");
+
+prevBtn.addEventListener("click",function(){
+currentday.setMonth(currentday.getMonth()-1);
+rendercalender(currentday);
+})
+
+nextBtn.addEventListener("click",function(){
+currentday.setMonth(currentday.getMonth()+1);
+rendercalender(currentday);
+})
 rendercalender(currentday);
