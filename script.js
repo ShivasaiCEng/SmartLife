@@ -104,6 +104,12 @@ function saveTask() {
 
   const Duedate=document.querySelector(".TaskDueDate input").value;
 
+  AppState.tasks.push({
+    title,
+    priority,
+    Duedate
+  });
+
   if(!title.trim()) return;
   const TaskDiv=document.createElement("div"); //TaskDiv will have all the tasks that are added as tasks.
 TaskDiv.classList.add("task");
@@ -320,27 +326,36 @@ for(let i=0;i<FirstDay;i++){
 // actual days
 for (let i = 1; i <= LastDay; i++) {
   const day = document.createElement("div");
+const daynumber = document.createElement("div");
+daynumber.textContent=i;
+day.appendChild(daynumber);
+
   if(i===Today.getDate() && month=== Today.getMonth() && year=== Today.getFullYear()){
   day.style.backgroundColor="greenyellow";}
-  day.textContent = i;
-  calenderblock.appendChild(day);
 }
+
+const current
 const HeadingMonth=months[month];  // string
 monthyear.textContent=`${HeadingMonth} ${year}`;
-
 }
-
-
 const prevBtn=document.getElementById("prevMonth");
 const nextBtn=document.getElementById("NextMonth");
-
 prevBtn.addEventListener("click",function(){
 currentday.setMonth(currentday.getMonth()-1);
 rendercalender(currentday);
 })
-
 nextBtn.addEventListener("click",function(){
 currentday.setMonth(currentday.getMonth()+1);
 rendercalender(currentday);
 })
 rendercalender(currentday);
+
+
+//logic  Tasks on the calender that i add in the tasks dashboard
+function TasksToCalender(){
+  const tasktitle= document.getElementById("task").input;
+  const tasktocalenderdiv=document.createElement("div");
+  classList.add(tasktocalenderdiv);
+  calenderblock.
+}
+
