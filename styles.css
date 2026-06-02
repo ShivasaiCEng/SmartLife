@@ -605,14 +605,28 @@ margin-top:5px;
   height:9rem;
   border-radius:5px;
 }
-/* .Taskdetails{
-height:auto;
-width:15rem;
-} */
 
-/* .TaskTitle{
-  font-size:100px;
-  font-weight:bold;
-} */
+.calendar-task{
+  font-size:10px;
+}
 
+.priority-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  display:inline-block;
+  margin-right:4px;
+}
+
+.high{
+  background:red;
+}
+
+.medium{
+  background:orange;
+}
+
+.low{
+  background:green;
+}
 
