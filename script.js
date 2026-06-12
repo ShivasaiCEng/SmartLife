@@ -326,7 +326,9 @@ for(let i=0;i<FirstDay;i++){
 // actual days
 for (let i = 1; i <= LastDay; i++) {
   const day = document.createElement("div");
+  day.classList.add("calendar-day");
 const daynumber = document.createElement("div");
+daynumber.classList.add("day-number");
 daynumber.textContent=i;
 day.appendChild(daynumber);
 
