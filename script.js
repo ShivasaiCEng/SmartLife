@@ -341,19 +341,28 @@ const currentDateString=`${year}-${String(month+1).padStart(2,"0")}-${String(i).
     task.Duedate === currentDateString
   )
 
-   tasksForDay.forEach(task => {
-
+tasksForDay.slice(0,3).forEach(task => {
     const badge = document.createElement("div");
 
-    badge.innerHTML = `
-      <span class="priority-dot ${task.priority.toLowerCase()}"></span>
-      ${task.title}
-    `;
+  badge.classList.add("calendar-task");
 
-    badge.classList.add("calendar-task");
-
+  badge.innerHTML = `
+    <span class="priority-dot ${task.priority.toLowerCase()}"></span>
+    ${task.title}
+  `;
     day.appendChild(badge);
   });
+
+  if(tasksForDay.length > 3){
+console.log(tasksForDay.length);
+  const more = document.createElement("div");
+
+  more.classList.add("more-tasks");
+
+  more.textContent = `+${tasksForDay.length - 3} more`;
+
+  day.appendChild(more);
+}
    calenderblock.appendChild(day);}
 const HeadingMonth=months[month];  // string
 monthyear.textContent=`${HeadingMonth} ${year}`;
