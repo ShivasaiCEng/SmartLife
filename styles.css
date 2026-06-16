@@ -685,3 +685,71 @@ margin-top:5px;
   font-weight: 600;
  
 }
+
+
+//day modal styling
+/* .day-modal{
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,0.4);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  z-index:1000;
+} */
+
+.hidden{
+  display:none;
+}
+
+/* .day-modal-content{
+  width:350px;
+  max-height:500px;
+
+  overflow-y:auto;
+
+  background:white;
+
+  border-radius:20px;
+
+  padding:20px;
+
+  position:relative;
+} */
+
+/* #closeDayModal{
+  position:absolute;
+  right:15px;
+  top:10px;
+
+  font-size:25px;
+  cursor:pointer;
+} */
+
+.day-popup{
+  position: absolute;
+
+  width: 250px;
+
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 15px;
+
+  box-shadow: 0 8px 30px rgba(0,0,0,.15);
+
+  z-index: 1000;
+}
+
+/* .hidden{
+  display:none;
+} */
+//completed task styling
+.completed-task{
+  text-decoration: line-through;
+  opacity: .6;
+}

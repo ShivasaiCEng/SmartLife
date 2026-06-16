@@ -107,7 +107,8 @@ function saveTask() {
   AppState.tasks.push({
     title,
     priority,
-    Duedate
+    Duedate,
+    completed:false
   });
 rendercalender(currentday);
   if(!title.trim()) return;
@@ -115,12 +116,10 @@ rendercalender(currentday);
 TaskDiv.classList.add("task");
 
   TaskDiv.innerHTML=`
-  <div class="Taskdetails" type=>
-    <div class="TaskTitleAndCheckbox">
-<input  class="taskcheckbox" type="checkbox"><p class="TaskTitle">${title}</p> </div>
-<div class="TaskPriorityAndDueDate">
-  <span class="TaskPriority">${priority}</span>
-  <span class="TaskDueDate">${Duedate}</span>
+  <div class="Taskdetails" data-title="${title}">
+  <div class="TaskTitleAndCheckbox">
+<input class="taskcheckbox" type="checkbox">
+<p class="TaskTitle">${title}</p>
   </div>
   </div>
   `;
@@ -138,18 +137,32 @@ document.querySelector(".TaskDueDate input").value="";
   }
 }
 
- taskList.addEventListener("click", (e)=>{
-if(e.target.classList.contains("taskcheckbox")){
-  const Task=e.target.closest(".Taskdetails");
-  const Title= Task.querySelector(".TaskTitle");
-if(e.target.checked){
-  Title.style.textDecoration = "line-through";
-}
-else{
-  Title.style.textDecoration = "none";
-}
- updateTaskcompletedcard();
-}
+taskList.addEventListener("change",(e)=>{
+
+  if(!e.target.classList.contains("taskcheckbox")) return;
+
+  const taskElement = e.target.closest(".Taskdetails");
+  const taskTitle = taskElement.dataset.title;
+
+  const taskObj = AppState.tasks.find(
+    task => task.title === taskTitle
+  );
+
+  if(taskObj){
+    taskObj.completed = e.target.checked;
+  }
+
+  const Title = taskElement.querySelector(".TaskTitle");
+
+  if(taskObj.completed){
+    Title.classList.add("completed-task");
+  }else{
+    Title.classList.remove("completed-task");
+  }
+
+  rendercalender(currentday);
+
+  updateTaskcompletedcard();
 });
 
 function updateTaskcompletedcard(){
@@ -345,7 +358,9 @@ tasksForDay.slice(0,3).forEach(task => {
     const badge = document.createElement("div");
 
   badge.classList.add("calendar-task");
-
+if(task.completed){
+  badge.classList.add("completed-task");
+}
   badge.innerHTML = `
     <span class="priority-dot ${task.priority.toLowerCase()}"></span>
     ${task.title}
@@ -360,7 +375,13 @@ console.log(tasksForDay.length);
   more.classList.add("more-tasks");
 
   more.textContent = `+${tasksForDay.length - 3} more`;
-
+more.addEventListener("click", (e) => {
+  openDayPopup(
+    currentDateString,
+    tasksForDay,
+    e.target
+  );
+});
   day.appendChild(more);
 }
    calenderblock.appendChild(day);}
@@ -378,3 +399,49 @@ currentday.setMonth(currentday.getMonth()+1);
 rendercalender(currentday);
 })
 rendercalender(currentday);
+
+//daymodal logic
+const dayPopup = document.getElementById("dayPopup");
+const popupTasks = document.getElementById("popupTasks");
+const popupDate = document.getElementById("popupDate");
+const closeDayPopup = document.getElementById("closeDayPopup");
+
+
+function openDayPopup(dateString, tasks, target){
+
+  popupTasks.innerHTML = "";
+
+  popupDate.textContent = dateString;
+
+  tasks.forEach(task => {
+
+    const div = document.createElement("div");
+
+    div.classList.add("calendar-task");
+    if(task.completed){
+  div.classList.add("completed-task");
+}
+
+    div.innerHTML = `
+      <span class="priority-dot ${task.priority.toLowerCase()}"></span>
+      ${task.title}
+    `;
+
+    popupTasks.appendChild(div);
+
+  });
+
+  const rect = target.getBoundingClientRect();
+
+  dayPopup.style.left =
+    `${window.scrollX + rect.right + 10}px`;
+
+  dayPopup.style.top =
+    `${window.scrollY + rect.top}px`;
+
+  dayPopup.classList.remove("hidden");
+}
+
+closeDayPopup.addEventListener("click", () => {
+  dayPopup.classList.add("hidden");
+});
