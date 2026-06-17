@@ -55,6 +55,14 @@ addNewTask.addEventListener("click", ()=>{
 
 });
 
+function hideAllPages(){
+  document.querySelector(".tasks").style.display = "none";
+  document.querySelector(".finance-page").style.display = "none";
+  document.querySelector(".focus-page").style.display = "none";
+
+}
+
+
 
 // Open modal
 newEntryBtn.addEventListener("click", () => {
@@ -120,10 +128,12 @@ TaskDiv.classList.add("task");
   <div class="TaskTitleAndCheckbox">
 <input class="taskcheckbox" type="checkbox">
 <p class="TaskTitle">${title}</p>
+<span class="TaskPriority">${priority}</span>
+  <span class="TaskDueDate">${Duedate}</span>
   </div>
   </div>
   `;
-  
+
 taskList.appendChild(TaskDiv);
 updateTaskcompletedcard();
 taskcount++;
@@ -151,19 +161,28 @@ taskList.addEventListener("change",(e)=>{
   if(taskObj){
     taskObj.completed = e.target.checked;
   }
-
-  const Title = taskElement.querySelector(".TaskTitle");
+    const Title = taskElement.querySelector(".TaskTitle");
 
   if(taskObj.completed){
-    Title.classList.add("completed-task");
+    Title.classList.add("completed-title");
   }else{
-    Title.classList.remove("completed-task");
+    Title.classList.remove("completed-title");
   }
+rendercalender(currentday);  
+updateTaskcompletedcard();});
+  // const Title = taskElement.querySelector(".TaskTitle");
 
-  rendercalender(currentday);
 
-  updateTaskcompletedcard();
-});
+  // if(taskObj.completed){
+  //   Title.classList.add("completed-title");
+  // }else{
+  //   Title.classList.remove("completed-title");
+  // }
+
+  // rendercalender(currentday);
+
+  // updateTaskcompletedcard();
+
 
 function updateTaskcompletedcard(){
   const dailytasks=document.querySelector(".DailyTasks");
@@ -227,9 +246,6 @@ function showTasks() {
   score.style.display = "none";
   togglebtns.style.display = "flex";
   newTaskblock.classList.remove("hidden");
-
-
-  
   const container = document.querySelector(".tasks");
     container.style.display="block";
 
@@ -354,17 +370,28 @@ const currentDateString=`${year}-${String(month+1).padStart(2,"0")}-${String(i).
     task.Duedate === currentDateString
   )
 
+
+
 tasksForDay.slice(0,3).forEach(task => {
+   console.log(task.title, task.completed);
     const badge = document.createElement("div");
 
   badge.classList.add("calendar-task");
 if(task.completed){
   badge.classList.add("completed-task");
+
 }
   badge.innerHTML = `
     <span class="priority-dot ${task.priority.toLowerCase()}"></span>
-    ${task.title}
+    <span class="task-text">${task.title}</span>
   `;
+  const textSpan = badge.querySelector(".task-text");
+  console.log(textSpan);
+
+if(task.completed){
+   textSpan.classList.add("completed-task");
+   console.log(textSpan.className);
+}
     day.appendChild(badge);
   });
 
@@ -424,8 +451,8 @@ function openDayPopup(dateString, tasks, target){
 
     div.innerHTML = `
       <span class="priority-dot ${task.priority.toLowerCase()}"></span>
-      ${task.title}
-    `;
+<span class="task-text">${task.title}</span>
+      `;
 
     popupTasks.appendChild(div);
 

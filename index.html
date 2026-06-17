@@ -223,6 +223,163 @@
 
 </div>
 
+<!--finance page-->
+<div class="finance-page">
+
+  <h1>Finance Tracker</h1>
+
+  <div class="finance-layout">
+
+    <!-- LEFT SIDE -->
+    <div class="finance-left">
+
+      <!-- Balance Card -->
+      <div class="balance-card">
+
+        <h3>TOTAL BALANCE</h3>
+        <h1>$0.00</h1>
+
+        <div class="income-expense-row">
+
+          <div class="mini-card">
+            <p>INCOME</p>
+            <h2>+$0.00</h2>
+          </div>
+
+          <div class="mini-card">
+            <p>EXPENSES</p>
+            <h2>-$0.00</h2>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Transaction History -->
+      <div class="transaction-history">
+
+        <div class="history-header">
+          <h2>Transaction History</h2>
+          <span>0 Transactions</span>
+        </div>
+
+        <div id="transactionList">
+
+          <!-- Example Transaction -->
+
+          <div class="transaction-item">
+
+            <div class="transaction-icon income">
+              S
+            </div>
+
+            <div class="transaction-info">
+              <h3>Monthly Salary</h3>
+
+              <div class="transaction-meta">
+                <span>SALARY</span>
+                <span>2026-06-15</span>
+              </div>
+            </div>
+
+            <div class="transaction-amount income-text">
+              +$4200
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="finance-right">
+
+      <!-- Add Transaction -->
+      <div class="add-transaction-card">
+
+        <h2>Add Transaction</h2>
+
+        <label>TYPE</label>
+
+        <div class="transaction-type">
+          <button class="active">Expense</button>
+          <button>Income</button>
+        </div>
+
+        <label>DESCRIPTION</label>
+        <input type="text" placeholder="Coffee, Salary, Uber..." />
+
+        <div class="amount-category">
+
+          <div>
+            <label>AMOUNT ($)</label>
+            <input type="number" placeholder="0.00">
+          </div>
+
+          <div>
+            <label>CATEGORY</label>
+
+            <select>
+              <option>Food & Drink</option>
+              <option>Shopping</option>
+              <option>Entertainment</option>
+              <option>Bills</option>
+              <option>Other</option>
+            </select>
+
+          </div>
+
+        </div>
+
+        <button class="record-btn">
+          Record Transaction
+        </button>
+
+      </div>
+
+      <!-- Spending Breakdown -->
+
+      <div class="spending-card">
+
+        <h2>Spending Breakdown</h2>
+
+        <div class="breakdown-item">
+
+          <div class="breakdown-row">
+            <span>Food & Drinks</span>
+            <span>$154 (61%)</span>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress-fill food"></div>
+          </div>
+
+        </div>
+
+        <div class="breakdown-item">
+
+          <div class="breakdown-row">
+            <span>Shopping</span>
+            <span>$0 (0%)</span>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress-fill shopping"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>
